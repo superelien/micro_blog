@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>My Webpage</title>
+    </head>
+    <body>
+        {% set a_variable = 'hello' %}
+        <ul id="navigation">
+        {% for item in navigation %}
+            <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+        {% endfor %}
+        </ul>
+
+        <h1>My Blog</h1>
+        <p>il est {{heure}} h {{minute}} minutes et {{seconde}} secondes</p>
+        <form action="http://localhost:5000/" method="post">
+            <label>post</label> : 
+            <textarea id="post" name="post"
+                    rows="0" cols="33"></textarea>
+
+            <label>secret</label> : <input type="text" name="secret" />
+            <input type="submit" value="Envoyer" />
+    </form>
+            {% if post %}            
+                <p> Secret Ok  </p>
+            {% else %}
+                <p>Ajouter votre identifiant secret </p>
+            {% endif %}
+        {# a comment #}
+    </body>
+</html>
